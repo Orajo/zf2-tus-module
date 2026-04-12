@@ -51,6 +51,13 @@ class IndexController extends AbstractActionController {
 
         // Create and configure server
         $server = new Server($storeLocation, $this->getRequest(), $this->filesystem, $debug);
+        if (!empty($this->config['allow_get'])) {
+            $server->setAllowGetMethod($this->config['allow_get']);
+        }
+
+        if (!empty($this->config['max_upload_size'])) {
+            $server->setAllowMaxSize($this->config['max_upload_size']);
+        }
 
         // Run server
         $server->process(true);
