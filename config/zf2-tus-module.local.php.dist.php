@@ -7,7 +7,9 @@ return array(
             'storage_path' => __DIR__ . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'storage',
             'allow_download_info' => false,
             'dirChmod' => octdec('0770'),
-            'chunk_size' => 2000000 // not used directly, only for configuring clients
+            'chunk_size' => 2000000, // not used directly, only for configuring clients
+            'allow_get' => false,
+            'max_upload_size' => 1073741824, // 1GiB
         ],
     ]
 );
